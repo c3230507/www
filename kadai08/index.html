@@ -20,15 +20,29 @@
         max-width: 100%;
         height: auto;
      }
-     
+     .square-link {
+        display: block;
+        border: 1px solid black;
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+        width: fit-content;
+        background-color: aliceblue;
+    }
+    .horizontal-list{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+    }
     </style>
 </head>
 <body>
     <nav>
-        <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="spots.html">観光スポット</a></li>
-            <li><a href="food.html">食べ物・お土産品</a></li>
+        <ul class="horizontal-list">
+            <a href="index.html" class="square-link">HOME</a>
+            <a href="spots.html" class="square-link">観光スポット</a>
+            <a href="food.html" class="square-link">食べ物・お土産品</a>
         </ul>
     </nav>
     <header>
