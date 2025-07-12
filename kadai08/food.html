@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>熱海プリン</title>
+    <title>食べ物・お土産</title>
     <style>
-        @media (max-width: 767px) {
+    @media (max-width: 767px) {
        body {
          background-color: lightblue;
        }
     }
-     @media (min-width: 768px) {
-       body {
-         background-color: lightgreen;
-       }
-     }
-     img{
+    @media (min-width: 768px) {
+        body {
+            background-color: lightgreen;
+        }
+    }
+    img{
         max-width: 100%;
         height: auto;
-     }
+    }
     .square-link {
         display: block;
         border: 1px solid black;
@@ -26,6 +26,19 @@
         text-decoration: none;
         color: black;
         width: fit-content;
+    }
+    .image-container {
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+    }
+
+    .image-container img {
+    transition: transform 0.3s ease;
+    }
+
+    .image-container img:hover {
+    transform: scale(1.2);
     }
     </style>
 </head>
@@ -37,7 +50,9 @@
     </nev>
     <header>
         <h2>熱海プリン</h2>
-        <img src="images/atamipurin.jpg" alt="熱海プリン">
+            <div class="image-container">
+                <img src="images/atamipurin.jpg" alt="熱海プリン">
+            </div>
         <p><strong>熱海駅から徒歩数分</strong>の場所にあります。一番近い店舗は、<strong>熱海駅前の仲見世通り商店街</strong>を抜けたところにある⋆⋆熱海プリン⋆⋆です。また、<strong>来宮駅からは杜甫訳11分</strong>で⋆⋆熱海プリン　カフェ2nd⋆⋆にアクセスできます。</p>
     </header>
 </body>
