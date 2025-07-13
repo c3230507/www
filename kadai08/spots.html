@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  width: 400px;
+  height: 600px;
+  border: 1px solid black;
+  text-align: center;
+  background-color: #ffffff;
+}
+    @media (max-width: 767px) {
+       body {
+         background-color: lightblue;
+       }
+       .item {
+        flex-basis: 45%;
+        }
+    }
+    @media (min-width: 768px) {
+        body {
+            background-color: lightgreen;
+        }
+        .item {
+            flex-basis: 90%;
+        }
+    }
+    img{
+        max-width: 100%;
+        height: auto;
+    }
+    .square-link {
+        display: block;
+        border: 1px solid black;
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+        width: fit-content;
+        background-color: #ffffff;
+    }
+    .image-container img {
+    transition: transform 0.3s ease;
+    }
+
+    .image-container img:hover {
+    transform: scale(1.2);
+    }
+</style>
+<body>
+    <nev>
+        <ul>
+            <a href="index.html" class="square-link">ホーム</a>
+        </ul>
+    </nev>
+    <header>
+        <h1>驚き発見ワクワクスポット</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="box">
+                <h2>熱海サンビーチ</h2>
+                <div class="image-container">
+                    <img src="images/sanbiti.jpg" alt="熱海サンビーチ">
+                </div>
+                <h3>アクセス</h3>
+                <p><strong>JR熱海駅から徒歩約20分</strong>。または<strong>熱海駅から熱海港・紅葉ガ丘方面行きバスにて約5分→サンビーチ下車→<br>徒歩約3分</strong>からでも行くことができます。</p>
+                <h3>概要</h3>
+                <p>熱海サンビーチは、<strong>南国のような雰囲気</strong>で、海水浴や散歩、ライトアップされた夜景を楽しめる人気のビーチです。特に、夏には<strong>ウォーターパーク</strong>も登場し、子供から大人まで楽しめます。また、<strong>熱海海上花火大会</strong>の会場としても知られ、花火の音響効果も楽しめます。</p>
+            </div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+    </main>
+</body>
+</html>
