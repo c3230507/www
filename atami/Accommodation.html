@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宿泊施設 - 熱海観光</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            color: #333;
+        }
+
+        /* 背景設定 */
+        @media (max-width: 767px) {
+            body {
+                background: linear-gradient(180deg, #E0F7FA 0%, #4FC3F7 100%);
+                min-height: 100vh;
+            }
+            .item {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+        @media (min-width: 768px) {
+            body {
+                background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+                min-height: 100vh;
+            }
+            .item {
+                width: 30%;
+                min-width: 300px;
+            }
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px 20px;
+        }
+
+        .item {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            box-sizing: border-box;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        .item:hover {
+            transform: translateY(-5px);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* --- ナビゲーション（青） --- */
+        nav {
+            background-color: rgba(255,255,255,0.8);
+            padding: 10px 0;
+            text-align: center;
+        }
+        .nav-link {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #006994; /* 青 */
+            font-weight: bold;
+            border: 2px solid #006994; /* 青 */
+            border-radius: 30px;
+            background-color: #fff;
+            transition: all 0.3s;
+        }
+        .nav-link:hover {
+            background-color: #006994;
+            color: white;
+        }
+
+        header h1 {
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin: 30px 0 10px;
+            text-align: center;
+        }
+        header p {
+            text-align: center;
+        }
+
+        .image-container {
+            overflow: hidden;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+        .image-container img {
+            transition: transform 0.5s ease;
+            width: 100%;
+            display: block;
+        }
+        .image-container img:hover {
+            transform: scale(1.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.9rem;
+        }
+        th {
+            background-color: #e1f5fe;
+            color: #0277bd;
+            border: 1px solid #b3e5fc;
+            padding: 8px;
+        }
+        td {
+            border: 1px solid #b3e5fc;
+            padding: 8px;
+            text-align: center;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+            margin: 20px 0;
+        }
+
+        h2 {
+            color: #01579b;
+            border-bottom: 2px solid #4fc3f7;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        h3 {
+            color: #0277bd;
+            margin-top: 20px;
+        }
+        
+        .map-frame {
+            width: 100%;
+            height: 200px;
+            border: 0;
+            margin-top: 15px;
+            border-radius: 8px;
+        }
+
+        /* 施設内ボタン */
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+            align-items: center;
+        }
+        .route-btn, .souvenir-btn, .spot-btn {
+            display: block;
+            width: 90%;
+            padding: 12px 0;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.9em;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            color: white;
+        }
+        .route-btn { background-color: #4285F4; }
+        .spot-btn { background-color: #4CAF50; }
+        .souvenir-btn { background-color: #ff9800; }
+        .route-btn:hover, .spot-btn:hover, .souvenir-btn:hover { transform: scale(1.02); }
+
+        /* --- 下部リンク（青） --- */
+        footer {
+            background-color: rgba(255,255,255,0.8);
+            padding: 20px;
+            margin-top: 40px;
+            text-align: center;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        .bottom-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding-bottom: 20px;
+        }
+        .bottom-links a {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: #0288d1; /* 青 */
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: background-color 0.3s;
+        }
+        .bottom-links a:hover {
+            background-color: #01579b;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-link">HOMEへ戻る</a>
+    </nav>
+    <header>
+        <h1>おすすめの宿泊施設をご紹介</h1>
+        <p style="color:white; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">熱海の海と温泉で、心安らぐひとときを。</p>
+    </header>
+    <main>
+        <div class="container">
+            <div class="item">
+                <h2>ホテルニューアカオ</h2>
+                <div class="image-container">
+                    <img src="images/nyuakao.jpg" alt="ホテルニューアカオ">
+                </div>
+                <p>熱海のシンボル『ホテルニューアカオ』本館が復活！</p>
+                <hr>
+                <p>最安値 <span style="color: #e53935; font-weight:bold;">14,240円～</span></p>
+                <table>
+                    <tr><th>温泉♨</th><th>露天風呂♨️</th><th>送迎🚌</th></tr>
+                    <tr><td>◯</td><td>◯</td><td>◯</td></tr>
+                </table>
+                <iframe class="map-frame" src="https://maps.google.co.jp/maps?output=embed&q=ホテルニューアカオ"></iframe>
+                <div class="btn-group">
+                    <a href="https://www.google.com/maps/dir/Atami+Station,+%EF%BC%91%EF%BC%91-11+%E7%94%B0%E5%8E%9F%E6%9C%AC%E7%94%BA,+%E7%86%B1%E6%B5%B7%E5%B8%82+%E9%9D%99%E5%B2%A1%E7%9C%8C,+Japan/Hotel+New+Akao+Horizon+Wing,+1993-65+%E7%86%B1%E6%B5%B7,+%E7%86%B1%E6%B5%B7%E5%B8%82+%E9%9D%99%E5%B2%A1%E7%9C%8C,+Japan/data=!4m14!4m13!1m5!1m1!19sChIJp8uCa2O-GWARBKANZGpM9cs!2m2!1d139.0778841!2d35.103842199999995!1m5!1m1!19sChIJKR4Slle-GWAR0LNShPj6PEE!2m2!1d139.0802449!2d35.0857812!3e0" target="_blank" class="route-btn">🗺️ 熱海駅からのルート</a>
+                    <a href="spots.html" class="spot-btn">📸 周辺の観光スポット</a>
+                    <a href="food.html" class="souvenir-btn">🎁 おすすめお土産を見る</a>
+                </div>
+            </div>
+
+            <div class="item">
+                <h2>亀の井ホテル 熱海</h2>
+                <div class="image-container">
+                    <img src="images/kamenoi.jpg" alt="亀の井ホテル">
+                </div>
+                <p>2025年3月リニューアル！広々客室で相模湾の絶景を満喫。</p>
+                <hr>
+                <p>最安値 <span style="color: #e53935; font-weight:bold;">15,840円～</span></p>
+                <table>
+                    <tr><th>温泉♨</th><th>露天風呂♨️</th><th>送迎🚌</th></tr>
+                    <tr><td>◯</td><td>◯</td><td>◯</td></tr>
+                </table>
+                <iframe class="map-frame" src="https://maps.google.co.jp/maps?output=embed&q=亀の井ホテル熱海"></iframe>
+                <div class="btn-group">
+                    <a href="https://www.google.com/maps/dir/Atami+Station,+%EF%BC%91%EF%BC%91-11+%E7%94%B0%E5%8E%9F%E6%9C%AC%E7%94%BA,+%E7%86%B1%E6%B5%B7%E5%B8%82+%E9%9D%99%E5%B2%A1%E7%9C%8C,+Japan/KAMENOI+HOTEL+ATAMI,+%EF%BC%92%E4%B8%81%E7%9B%AE-%EF%BC%91%EF%BC%92-3+%E6%B0%B4%E5%8F%A3%E7%94%BA,+%E7%86%B1%E6%B5%B7%E5%B8%82+%E9%9D%99%E5%B2%A1%E7%9C%8C,+Japan/data=!4m14!4m13!1m5!1m1!19sChIJp8uCa2O-GWARBKANZGpM9cs!2m2!1d139.0778841!2d35.103842199999995!1m5!1m1!19sChIJs5fZ_2q-GWARNLlgPQUm7kA!2m2!1d139.063659!2d35.0923395!3e0" target="_blank" class="route-btn">🗺️ 熱海駅からのルート</a>
+                    <a href="spots.html" class="spot-btn">📸 周辺の観光スポット</a>
+                    <a href="food.html" class="souvenir-btn">🎁 おすすめお土産を見る</a>
+                </div>
+            </div>
+
+            <div class="item">
+                <h2>大江戸温泉物語<br>ホテル水葉亭</h2>
+                <div class="image-container">
+                    <img src="images/suiyoutei.jpg" alt="ホテル水葉亭">
+                </div>
+                <p>相模灘一望の絶景露天風呂と海鮮バイキング。</p>
+                <hr>
+                <p>最安値 <span style="color: #e53935; font-weight:bold;">12,700円～</span></p>
+                <table>
+                    <tr><th>温泉♨</th><th>露天風呂♨️</th><th>送迎🚌</th></tr>
+                    <tr><td>◯</td><td>◯</td><td>◯</td></tr>
+                </table>
+                <iframe class="map-frame" src="https://maps.google.co.jp/maps?output=embed&q=大江戸温泉物語ホテル水葉亭"></iframe>
+                <div class="btn-group">
+                    <a href="https://www.google.com/maps/dir/Atami+Station,+%EF%BC%91%EF%BC%91-11+%E7%94%B0%E5%8E%9F%E6%9C%AC%E7%94%BA,+%E7%86%B1%E6%B5%B7%E5%B8%82+%E9%9D%99%E5%B2%A1%E7%9C%8C,+Japan/Atami+Izusan+Hotel+Suiy%C5%8Dtei,+190-1+%E4%BC%8A%E8%B1%86%E5%B1%B1,+%E7%86%B1%E6%B5%B7%E5%B8%82+%E9%9D%99%E5%B2%A1%E7%9C%8C,+Japan/data=!4m14!4m13!1m5!1m1!19sChIJp8uCa2O-GWARBKANZGpM9cs!2m2!1d139.0778841!2d35.103842199999995!1m5!1m1!19sChIJqy06boa-GWARqIzflJl5-gM!2m2!1d139.0860792!2d35.1095572!3e0" target="_blank" class="route-btn">🗺️ 熱海駅からのルート</a>
+                    <a href="spots.html" class="spot-btn">📸 周辺の観光スポット</a>
+                    <a href="food.html" class="souvenir-btn">🎁 おすすめお土産を見る</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bottom-links">
+            <a href="Accommodation.html">▲ ページトップへ</a>
+            <a href="index.html">🏠 ホームへ戻る</a>
+        </div>
+    </main>
+    <footer>
+        <p>© 2025 熱海観光情報</p>
+    </footer>
+</body>
+</html>

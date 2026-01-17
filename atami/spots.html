@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>観光スポット - 熱海観光</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            color: #333;
+        }
+
+        /* 背景設定 */
+        @media (max-width: 767px) {
+            body {
+                background: linear-gradient(180deg, #E0F7FA 0%, #4FC3F7 100%);
+                min-height: 100vh;
+            }
+            .item { width: 100%; margin-bottom: 20px; }
+        }
+        @media (min-width: 768px) {
+            body {
+                background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+                min-height: 100vh;
+            }
+            .item { width: 30%; min-width: 300px; }
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px 20px;
+        }
+
+        .item {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            box-sizing: border-box;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+        .item:hover { transform: translateY(-5px); }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* --- ナビゲーション（緑） --- */
+        nav {
+            background-color: rgba(255,255,255,0.8);
+            padding: 10px 0;
+            text-align: center;
+        }
+        .nav-link {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #2e7d32; /* 緑 */
+            font-weight: bold;
+            border: 2px solid #2e7d32; /* 緑 */
+            border-radius: 30px;
+            background-color: #fff;
+            transition: all 0.3s;
+        }
+        .nav-link:hover {
+            background-color: #2e7d32;
+            color: white;
+        }
+
+        header h1 {
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin: 30px 0 10px;
+            text-align: center;
+        }
+
+        .image-container {
+            overflow: hidden;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+        .image-container img {
+            transition: transform 0.5s ease;
+            width: 100%;
+            display: block;
+        }
+        .image-container img:hover { transform: scale(1.1); }
+
+        h2 {
+            color: #1b5e20;
+            border-bottom: 2px solid #66bb6a;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        h3 {
+            color: #2e7d32;
+            margin-top: 15px;
+            font-size: 1.1em;
+        }
+        
+        .map-frame {
+            width: 100%;
+            height: 200px;
+            border: 0;
+            margin-top: 15px;
+            border-radius: 8px;
+        }
+        
+        .route-btn {
+            display: block;
+            width: fit-content;
+            margin: 15px auto 0;
+            padding: 12px 25px;
+            background-color: #4285F4;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.9em;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+        .route-btn:hover { background-color: #3367D6; }
+
+        /* --- 下部リンク（緑） --- */
+        .bottom-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding-bottom: 20px;
+            text-align: center;
+        }
+        .bottom-links a {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: #4caf50; /* 緑 */
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: background-color 0.3s;
+        }
+        .bottom-links a:hover {
+            background-color: #2e7d32;
+        }
+
+        footer {
+            background-color: rgba(255,255,255,0.8);
+            padding: 20px;
+            text-align: center;
+            color: #555;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-link">HOMEへ戻る</a>
+    </nav>
+    <header>
+        <h1>驚き発見ワクワクスポット</h1>
+        <p style="color:white; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">熱海の自然と歴史を感じる旅へ。</p>
+    </header>
+    <main>
+        <div class="container">
+            <div class="item">
+                <h2>熱海サンビーチ</h2>
+                <div class="image-container">
+                    <img src="images/sanbiti.jpg" alt="熱海サンビーチ">
+                </div>
+                <h3>📍 アクセス</h3>
+                <p>JR熱海駅から徒歩約20分。またはバスでサンビーチ下車。</p>
+                <h3>💡 特徴</h3>
+                <p>南国のような雰囲気のビーチ。夏はウォーターパーク、夜はライトアップが楽しめます。</p>
+                <iframe class="map-frame" src="https://maps.google.co.jp/maps?output=embed&q=熱海サンビーチ"></iframe>
+                <a href="https://www.google.com/maps/embed/v1/place?q=place_id:PLACE_ID&key=YOUR_API_KEY7" target="_blank" class="route-btn">🗺️ 熱海駅からのルート</a>
+            </div>
+
+            <div class="item">
+                <h2>熱海梅園</h2>
+                <div class="image-container">
+                    <img src="images/atamibaien.jpg" alt="熱海梅園">
+                </div>
+                <h3>📍 アクセス</h3>
+                <p>JR熱海駅からバス約15分。来宮駅より徒歩約10分。</p>
+                <h3>💡 特徴</h3>
+                <p>日本一早咲きの梅で有名。11月中旬から梅の花が楽しめます。</p>
+                <iframe class="map-frame" src="https://maps.google.co.jp/maps?output=embed&q=熱海梅園"></iframe>
+                <a href="https://www.google.com/maps/embed/v1/place?q=place_id:PLACE_ID&key=YOUR_API_KEY8" target="_blank" class="route-btn">🗺️ 熱海駅からのルート</a>
+            </div>
+
+            <div class="item">
+                <h2>初島</h2>
+                <div class="image-container">
+                    <img src="images/hatusima.jpg" alt="初島">
+                </div>
+                <h3>📍 アクセス</h3>
+                <p>熱海港から定期船で30分。</p>
+                <h3>💡 特徴</h3>
+                <p>静岡県唯一の有人島。亜熱帯の植物やグルメ、リゾート気分を満喫できます。</p>
+                <iframe class="map-frame" src="https://maps.google.co.jp/maps?output=embed&q=初島"></iframe>
+                <a href="https://www.google.com/maps/embed/v1/place?q=place_id:PLACE_ID&key=YOUR_API_KEY9" target="_blank" class="route-btn">🗺️ 熱海駅からのルート</a>
+            </div>
+        </div>
+        
+        <div class="bottom-links">
+            <a href="spots.html">▲ ページトップへ</a>
+            <a href="index.html">🏠 ホームへ戻る</a>
+        </div>
+    </main>
+    <footer>
+        <p>© 2025 熱海観光情報</p>
+    </footer>
+</body>
+</html>

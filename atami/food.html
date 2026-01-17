@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>食べ物・お土産 - 熱海観光</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            color: #333;
+        }
+
+        /* 宿泊ページと同じ背景設定（レスポンシブ） */
+        @media (max-width: 767px) {
+            body {
+                background: linear-gradient(180deg, #E0F7FA 0%, #4FC3F7 100%);
+                min-height: 100vh;
+            }
+            .item {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+        @media (min-width: 768px) {
+            body {
+                background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+                min-height: 100vh;
+            }
+            .item {
+                width: 30%;
+                min-width: 300px;
+            }
+        }
+
+        /* レイアウト */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px 20px;
+        }
+
+        /* カードデザイン */
+        .item {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            box-sizing: border-box;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+        .item:hover {
+            transform: translateY(-5px);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* ナビゲーション */
+        nav {
+            background-color: rgba(255,255,255,0.8);
+            padding: 10px 0;
+            text-align: center;
+        }
+        .nav-link {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #ff9800; /* お土産ページはオレンジ基調 */
+            font-weight: bold;
+            border: 2px solid #ff9800;
+            border-radius: 30px;
+            background-color: #fff;
+            transition: all 0.3s;
+        }
+        .nav-link:hover {
+            background-color: #ff9800;
+            color: white;
+        }
+
+        header h1 {
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin: 30px 0 10px;
+            text-align: center;
+        }
+
+        .image-container {
+            overflow: hidden;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+        .image-container img {
+            transition: transform 0.5s ease;
+            width: 100%;
+            display: block;
+        }
+        .image-container img:hover {
+            transform: scale(1.1);
+        }
+
+        h2 {
+            color: #ef6c00;
+            border-bottom: 2px solid #ffcc80;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        h3 {
+            color: #f57c00;
+            margin-top: 15px;
+            font-size: 1.1em;
+        }
+        
+        /* マップとボタンのスタイル */
+        .map-frame {
+            width: 100%;
+            height: 200px;
+            border: 0;
+            margin-top: 15px;
+            border-radius: 8px;
+        }
+        
+        .route-btn {
+            display: block;
+            width: fit-content;
+            margin: 15px auto 0;
+            padding: 12px 25px;
+            background-color: #4285F4; /* Googleマップの青色 */
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.9em;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+        .route-btn:hover {
+            background-color: #3367D6;
+        }
+
+        /* 戻るリンクのスタイル */
+        .bottom-links {
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        .bottom-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            margin: 0 10px;
+        }
+
+        footer {
+            background-color: rgba(255,255,255,0.8);
+            padding: 20px;
+            text-align: center;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="Accommodation.html" class="nav-link">宿泊施設へ戻る</a>
+        <a href="index.html" class="nav-link">HOME</a>
+    </nav>
+    <header>
+        <h1>絶品！熱海のお土産＆グルメ</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="item">
+                <h2>熱海ばたーあんパンまんじゅう</h2>
+                <div class="image-container">
+                    <img src="images/omanju.webp" alt="熱海ばたーあんパンまんじゅう">
+                </div>
+                <h3>📍 アクセス</h3>
+                <p>熱海駅から徒歩2分（熱海仲見世商店街）</p>
+                <h3>💡 特徴</h3>
+                <p>創業明治四年の「又一庵」が手掛ける逸品。パンのような饅頭生地で、粒あんとバターを包み込んでいます。甘じょっぱさがクセになります！</p>
+                
+                <iframe class="map-frame" src="https://maps.google.co.jp/maps?output=embed&q=又一庵+熱海ばたーあん"></iframe>
+                <a href="https://www.google.com/maps/dir/熱海駅/又一庵+熱海ばたーあんパン" target="_blank" class="route-btn">🗺️ 熱海駅からのルート</a>
+            </div>
+
+            <div class="item">
+                <h2>熱海プリン</h2>
+                <div class="image-container">
+                    <img src="images/atamipurin.jpg" alt="熱海プリン">
+                </div>
+                <h3>📍 アクセス</h3>
+                <p>熱海駅から徒歩3分（仲見世通り商店街近く）。</p>
+                <h3>💡 特徴</h3>
+                <p>カバのマークが目印！温泉卵を使用したり、少し塩を効かせたりと、熱海温泉ならではのこだわりが詰まったとろけるプリンです。</p>
+
+                <iframe class="map-frame" src="https://maps.google.co.jp/maps?output=embed&q=熱海プリン"></iframe>
+                <a href="https://www.google.com/maps/dir/熱海駅/熱海プリン" target="_blank" class="route-btn">🗺️ 熱海駅からのルート</a>
+            </div>
+
+            <div class="item">
+                <h2>海鮮丼（熱海銀座おさかな食堂）</h2>
+                <div class="image-container">
+                    <img src="images/kaisendon.jpg" alt="海鮮丼">
+                </div>
+                <h3>📍 アクセス</h3>
+                <p>JR熱海駅から徒歩約15分（熱海銀座商店街）。</p>
+                <h3>💡 特徴</h3>
+                <p>ランチは豪華海鮮丼、ディナーは海鮮居酒屋。「熱海らしさ」をコンセプトに、新鮮な魚介を山盛りにした贅沢な丼が楽しめます。</p>
+
+                <iframe class="map-frame" src="https://maps.google.co.jp/maps?output=embed&q=熱海銀座おさかな食堂"></iframe>
+                <a href="https://www.google.com/maps/dir/熱海駅/熱海銀座おさかな食堂" target="_blank" class="route-btn">🗺️ 熱海駅からのルート</a>
+            </div>
+        </div>
+        
+        <div class="bottom-links">
+            <a href="Accommodation.html">🏨 宿泊施設一覧へ戻る</a>
+            <a href="index.html">🏠 ホームへ戻る</a>
+        </div>
+    </main>
+    <footer>
+        <p>© 2025 熱海観光情報</p>
+    </footer>
+</body>
+</html>

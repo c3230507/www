@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>住むひとが誇りを 訪れるひとに感動を 誰もが輝く楽園都市熱海</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            color: #333;
+            min-height: 100vh;
+        }
+
+        /* 背景設定 */
+        @media (max-width: 767px) {
+            body {
+                background: linear-gradient(180deg, #E0F7FA 0%, #4FC3F7 100%);
+            }
+            .content-card { width: 95%; padding: 20px; }
+            h1 { font-size: 1.5rem; }
+            .horizontal-list { grid-template-columns: 1fr 1fr; }
+            .nav-link { font-size: 0.85rem; padding: 5px; }
+        }
+        @media (min-width: 768px) {
+            body {
+                background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+            }
+            .content-card { width: 60%; min-width: 600px; padding: 40px; }
+            .horizontal-list { grid-template-columns: 1fr 1fr 1fr 1fr; max-width: 900px; margin: 0 auto; }
+            .nav-link { font-size: 1rem; }
+        }
+
+        /* --- ナビゲーション（青） --- */
+        nav {
+            background-color: rgba(255,255,255,0.9);
+            padding: 15px 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .horizontal-list {
+            display: grid;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .horizontal-list li { width: 100%; }
+        .nav-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            min-height: 50px;
+            text-decoration: none;
+            color: #006994; /* 青 */
+            font-weight: bold;
+            border: 2px solid #006994; /* 青 */
+            border-radius: 30px;
+            background-color: #fff;
+            transition: all 0.3s;
+            box-sizing: border-box;
+            text-align: center;
+            line-height: 1.2;
+        }
+        .nav-link:hover {
+            background-color: #006994;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        header { text-align: center; padding: 30px 20px; }
+        h1 {
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        main { display: flex; justify-content: center; padding-bottom: 40px; }
+        .content-card {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .image-container {
+            overflow: hidden;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .image-container img:hover { transform: scale(1.05); }
+
+        p { line-height: 1.8; margin-bottom: 20px; text-align: left; }
+        .intro-text { text-align: center; font-size: 1.1em; }
+
+        h2 {
+            color: #01579b;
+            border-bottom: 2px solid #4fc3f7;
+            padding-bottom: 10px;
+            margin-top: 40px;
+            display: inline-block;
+        }
+        h3 { color: #0277bd; margin-top: 30px; }
+
+        /* --- 下部リンクボタン（青） --- */
+        .bottom-links ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            width: 100%;
+        }
+        .bottom-links li { width: 100%; display: flex; justify-content: center; }
+        .bottom-links a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 320px;
+            min-height: 54px;
+            padding: 10px;
+            background-color: #0288d1; /* 青 */
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            text-align: center;
+            box-sizing: border-box;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+        .bottom-links a:hover {
+            background-color: #01579b;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="horizontal-list">
+            <li><a href="index.html" class="nav-link">HOME</a></li>
+            <li><a href="spots.html" class="nav-link">観光スポット</a></li>
+            <li><a href="food.html" class="nav-link">食べ物・お土産</a></li>
+            <li><a href="Accommodation.html" class="nav-link">宿泊施設</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>住むひとが誇りを 訪れるひとに感動を<br>誰もが輝く楽園都市熱海</h1>
+    </header>
+    <main>
+        <div class="content-card">
+            <div class="image-container">
+                <img src="images/atami.jpg" alt="熱海の街並み">
+            </div>
+            <p class="intro-text"><strong>静岡県熱海市</strong></p>
+            <p class="intro-text">新幹線を利用すれば、<strong>東京から35分</strong>、<strong>名古屋から90分</strong>とアクセス抜群です。</p>
+            <hr style="border:0; border-top:1px solid #ddd; margin: 20px 0;">
+            <p>静岡県東部、緑豊かな伊豆半島の玄関口に位置する熱海は、古くから愛されてきた<strong style="color:#e53935;">温泉街</strong>として有名です。豊富な湯量の温泉はもちろん、四季折々の美しい景色、そして新鮮な海の幸が訪れる人々を魅了しています。</p>
+            <article>
+                <h2>熱海の魅力</h2>
+                <p>相模湾を望む絶景、歴史ある温泉文化、そして心温まるおもてなし。熱海には、癒しと発見に満ちた体験が詰まっています。日帰り旅行から長期滞在まで、あなたの旅のスタイルに合わせて、様々な楽しみ方が出てきます。</p>
+                <h3>熱海の観光情報をもっと見る</h3>
+                <div class="bottom-links">
+                    <ul>
+                        <li><a href="spots.html">📸 おすすめの観光スポットはこちら</a></li>
+                        <li><a href="food.html">🍣 おいしいグルメやお土産品はこちら</a></li>
+                        <li><a href="Accommodation.html">🏨 おすすめの宿泊施設はこちら</a></li>
+                        <li><a href="index.html">🏠 TOPへ戻る</a></li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 熱海観光情報</p>
+    </footer>
+</body>
+</html>
