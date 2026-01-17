@@ -13,41 +13,58 @@
             min-height: 100vh;
         }
 
-        /* 背景設定 */
-        @media (max-width: 767px) {
-            body {
-                background: linear-gradient(180deg, #E0F7FA 0%, #4FC3F7 100%);
-            }
-            .content-card { width: 95%; padding: 20px; }
-            h1 { font-size: 1.5rem; }
-            .horizontal-list { grid-template-columns: 1fr 1fr; }
-            .nav-link { font-size: 0.85rem; padding: 5px; }
-        }
-        @media (min-width: 768px) {
-            body {
-                background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
-            }
-            .content-card { width: 60%; min-width: 600px; padding: 40px; }
-            .horizontal-list { grid-template-columns: 1fr 1fr 1fr 1fr; max-width: 900px; margin: 0 auto; }
-            .nav-link { font-size: 1rem; }
+        /* 背景グラデーション (スマホ・デフォルト) */
+        body {
+            background: linear-gradient(180deg, #E0F7FA 0%, #4FC3F7 100%);
         }
 
-        /* --- ナビゲーション（青） --- */
+        /* --------------------------------------
+           ナビゲーション設定（修正版）
+           -------------------------------------- */
+        
+        /* 1. ナビゲーションバー全体 */
         nav {
             background-color: rgba(255,255,255,0.9);
-            padding: 15px 10px;
+            padding: 15px 0;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 100%;
+            /* 中身（ul）を強制的に中央に寄せる */
+            display: flex;
+            justify-content: center;
         }
+
+        /* 2. ボタンのリスト */
         .horizontal-list {
             display: grid;
-            gap: 10px;
+            gap: 15px; /* ボタン同士の間隔 */
             list-style: none;
-            padding: 0;
-            margin: 0;
-            width: 100%;
+            padding: 0 10px; /* スマホで端っこすぎないように少し余白 */
+            margin: 0;       /* 親要素(nav)が中央寄せしてくれるので0でOK */
             box-sizing: border-box;
+            
+            /* 幅の設定 */
+            width: 100%;      /* 親の幅に合わせる */
+            max-width: 900px; /* ただし900px以上には広がらない */
         }
-        .horizontal-list li { width: 100%; }
+
+        /* スマホ：2列 */
+        @media (max-width: 767px) {
+            .horizontal-list {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        /* PC：4列 */
+        @media (min-width: 768px) {
+            .horizontal-list {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+        }
+
+        .horizontal-list li {
+            width: 100%;
+        }
+
+        /* 3. 個別のボタンデザイン */
         .nav-link {
             display: flex;
             justify-content: center;
@@ -55,38 +72,51 @@
             width: 100%;
             height: 100%;
             min-height: 50px;
+            padding: 5px;
             text-decoration: none;
-            color: #006994; /* 青 */
+            color: #006994;
             font-weight: bold;
-            border: 2px solid #006994; /* 青 */
+            border: 2px solid #006994;
             border-radius: 30px;
             background-color: #fff;
             transition: all 0.3s;
             box-sizing: border-box;
             text-align: center;
             line-height: 1.2;
+            font-size: 0.9rem;
         }
+
         .nav-link:hover {
             background-color: #006994;
             color: white;
             transform: translateY(-2px);
         }
 
+        /* --------------------------------------
+           メインコンテンツ設定
+           -------------------------------------- */
         header { text-align: center; padding: 30px 20px; }
         h1 {
             color: #fff;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             margin: 0;
             line-height: 1.4;
+            font-size: 1.5rem;
         }
 
-        main { display: flex; justify-content: center; padding-bottom: 40px; }
+        main {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 40px;
+        }
         .content-card {
             background-color: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
             margin: 0 auto;
             text-align: center;
+            width: 95%; /* スマホ用幅 */
+            padding: 20px;
         }
 
         .image-container {
@@ -115,7 +145,7 @@
         }
         h3 { color: #0277bd; margin-top: 30px; }
 
-        /* --- 下部リンクボタン（青） --- */
+        /* 下部リンクボタン */
         .bottom-links ul {
             list-style: none;
             padding: 0;
@@ -134,7 +164,7 @@
             max-width: 320px;
             min-height: 54px;
             padding: 10px;
-            background-color: #0288d1; /* 青 */
+            background-color: #0288d1;
             color: white;
             text-decoration: none;
             border-radius: 50px;
@@ -157,6 +187,24 @@
             font-weight: bold;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
+
+        /* --------------------------------------
+           PC向け設定 (768px以上) - 確実に最後に記述して上書き
+           -------------------------------------- */
+        @media (min-width: 768px) {
+            body {
+                background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+            }
+            .content-card {
+                width: 60%;
+                min-width: 600px;
+                padding: 40px;
+            }
+            /* ナビボタンの文字サイズ調整 */
+            .nav-link {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -168,21 +216,27 @@
             <li><a href="Accommodation.html" class="nav-link">宿泊施設</a></li>
         </ul>
     </nav>
+
     <header>
         <h1>住むひとが誇りを 訪れるひとに感動を<br>誰もが輝く楽園都市熱海</h1>
     </header>
+
     <main>
         <div class="content-card">
             <div class="image-container">
                 <img src="images/atami.jpg" alt="熱海の街並み">
             </div>
+            
             <p class="intro-text"><strong>静岡県熱海市</strong></p>
             <p class="intro-text">新幹線を利用すれば、<strong>東京から35分</strong>、<strong>名古屋から90分</strong>とアクセス抜群です。</p>
             <hr style="border:0; border-top:1px solid #ddd; margin: 20px 0;">
+            
             <p>静岡県東部、緑豊かな伊豆半島の玄関口に位置する熱海は、古くから愛されてきた<strong style="color:#e53935;">温泉街</strong>として有名です。豊富な湯量の温泉はもちろん、四季折々の美しい景色、そして新鮮な海の幸が訪れる人々を魅了しています。</p>
+
             <article>
                 <h2>熱海の魅力</h2>
                 <p>相模湾を望む絶景、歴史ある温泉文化、そして心温まるおもてなし。熱海には、癒しと発見に満ちた体験が詰まっています。日帰り旅行から長期滞在まで、あなたの旅のスタイルに合わせて、様々な楽しみ方が出てきます。</p>
+                
                 <h3>熱海の観光情報をもっと見る</h3>
                 <div class="bottom-links">
                     <ul>
@@ -195,6 +249,7 @@
             </article>
         </div>
     </main>
+
     <footer>
         <p>&copy; 2025 熱海観光情報</p>
     </footer>
